@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TPOApp</string>
+    <string name="title_activity_academia">Academia</string>
+    <string name="title_activity_admin_view">AdminView</string>
+</resources>
