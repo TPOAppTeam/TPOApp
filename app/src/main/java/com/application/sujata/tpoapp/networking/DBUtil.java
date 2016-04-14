@@ -8,6 +8,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+import com.application.sujata.tpoapp.SignInUp;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -67,7 +69,9 @@ public class DBUtil {
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(activity, s, Toast.LENGTH_LONG).show();
-
+                if(activity instanceof SignInUp){
+                    ((SignInUp) activity).authenticate(s);
+                }
             }
             @Override
             protected String doInBackground(Void... v) {

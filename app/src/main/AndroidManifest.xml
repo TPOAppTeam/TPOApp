@@ -3,6 +3,7 @@
     package="com.application.sujata.tpoapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +23,8 @@
             android:label="@string/title_activity_academia"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AdminView" />
-        <activity android:name=".AddCordinator"></activity>
+        <activity android:name=".AddCordinator" />
+        <activity android:name=".StudentMenu"></activity>
     </application>
 
 </manifest>
