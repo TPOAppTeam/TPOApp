@@ -10,6 +10,7 @@ public class Config {
 
     public static final String URL_REGISTER="https://tpo-app-priyankarthorat-2.c9users.io/application/RegisterStudent.php";
     public static final String URL_LOGIN="https://tpo-app-priyankarthorat-2.c9users.io/application/StudentLogin.php";
+    public static final String URL_MYPROFILE="https://tpo-app-priyankarthorat-2.c9users.io/application/RetrieveProfile.php?PRN=";
     //Keys that will be used to send the request to php scripts : table Student
     public static final String KEY_PRN = "PRN";
     public static final String KEY_NAME = "Name";

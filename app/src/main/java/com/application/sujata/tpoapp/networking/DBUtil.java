@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+import com.application.sujata.tpoapp.MyProfile;
 import com.application.sujata.tpoapp.SignInUp;
 
 import java.util.HashMap;
@@ -84,6 +85,44 @@ public class DBUtil {
 
         Retrieve s = new Retrieve();
         s.execute();
+    }
+
+    public void getDetails(final String url,final String prn){
+
+        class User extends AsyncTask<Void,Void,String> {
+
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(activity, "Loading...", "Wait...", false, false);
+            }
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                RequestHandler rh = new RequestHandler();
+                String s = rh.sendGetRequestParam(url, prn);
+                return s;
+            }
+        }
+
+        User ae = new User();
+
+        ae.execute();
+
+    }
+    public void setDataIntoList(String r,String attr){
+
+        JSON pj = new JSON(r);
+        pj.setProfile();
+
+        if(activity instanceof MyProfile)
+            ((MyProfile) activity).setPersonalInfoView();
     }
 
 }
